@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* palette 🎨 */
+:root {
+    --white: #ffffff;
+    --black: #323232;
+    --yellow: #FFCC00;
+    --red: #FF0000;
+    --blue: #45C0C2;
+    --violet: #8d2aff;
+    --navy: #372070;
+}
+
+/* all document settings 🔧 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    color: var(--white);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--white);
+}
+
+/* navegation bar 🌐 */
+header {
+    background-color: var(--navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 5px 10%;
+    font-weight: bolder;
+}
+
+/* logo in navigation bar */
+header .logo img {
+    cursor: pointer;
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+/* Hover logo */
+/* header .logo img:hover {
+    transform: scale(1.1);
+} */
+
+/* navegation links in navigation bar */
+header .nav-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+header .nav-links li:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+header .nav-links a {
+    font-size: small;
+    color: var(--white);
+    text-decoration: none;
+}
+
+header .nav-links li a:hover {
+    color: var(--yellow);
+}
+
+#contact-us a:hover {
+    color: #ff4f4f;
+}
+
+/* carrousel */
+.carrousel img {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* h1 ❤️ */
+
+h1 {
+    width: 800px;
+    color: var(--navy);
+    font-size: 50px;
+    text-align: center;
+    margin: 0px auto;
+    margin-top: 50px;
+    line-height: 50px;
+}
+
+/* about us info-container */
+.info-container {
+    transform: translateY(0px);
+    width: 1250px;
+    height: auto;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    margin-block: 50px;
+    border-radius: 25px;   
+}
+
+.info-container:hover {
+    transform: translateY(-15px);
+    box-shadow: 0px 10px 7px 0px rgba(0, 0, 0, 0.5);
+    transition: all 1s;
+
+}
+
+.description {
+    width: 50%;
+    background-color: var(--navy);
+    border-radius: 25px 0px 0px 25px;
+}
+
+.mision_vision {
+    width: 50%;
+    background-color: var(--blue);
+    border-radius: 0px 25px 25px 0px;
+}
+
+.mision_vision h3 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.info-container p,
+.info-container h2,
+.info-container h3 {
+    color: var(--white);
+    margin: 3%;
+}
+
+.info-container h2 {
+    font-size: 30px;
+}
+
+.info-container h3 {
+    font-size: 20px;
+}
+
+/* description */
+#description {
+    width: 800px;
+    color: var(--black);
+    font-size: 20px;
+    text-align: center;
+    margin: 0px auto;
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: var(--black);
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translatex(0);
+        transform: translatex(0);
+    }
+
+    100% {
+        -webkit-transform: translatex(calc(-200px * 6));
+        transform: translatex(calc(-200px * 6));
+    }
+  
+  
+}
+
+.tablita {
+  background-color: #8d2aff;
+  border-collapse: collapse;
+  width: 800px;
+}
+
+.tablita tr {
+  width: 500px;
+}
+
+.tablita th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+  padding: 50px;
+}
+
+.tablita td {
+  padding: 50px;
+}
+
+.tablita2 {
+  background-color: #8d2aff;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tablita2 th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+}
+
+.tablita2 td {
+  padding: 8px;
+}
+
+.tablita3 {
+  background-color: #8d2aff;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tablita3 th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+  padding: 50px;
+}
+
+.tablita3 td {
+  padding: 50px;
+}
+
+.tablita__img {
+    width: 50%;
+}
+
+
+.tablita__contenido {
+    width: 50%;
+  }
+
+.body-login{
+    background-color: #8d2aff;
+}
