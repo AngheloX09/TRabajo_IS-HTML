@@ -92,24 +92,49 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+
+	<style>
+    /* Estilo CSS para el cuerpo de la página */
+    body {
+      background-color: #d6c8e7; /* Cambia el color de fondo aquí */
+    }
+  </style>
 </head>
 
 <body class="body-login">
   <!-- Navbar -->
-  <header class="header">
-        <div class="logo">
-            <img src="img/logo.png" alt="logo">
-        </div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="noticias.php">noticias</a></li>
-                <li><a href="acercade.html">Acerca de</a></li>
-                <li id="contact-us"><a href="contacto.html">Contáctanos</a></li>
-                <li><a href="login.php">Iniciar sesion</a></li>
-            </ul>
-        </nav>
-    </header>
+  <nav class="navbar" style="background-color: #e5daf3;">
+  <div class="container-fluid">
+  <div class="container">
+    <a class="navbar-brand" href="index.php">
+      <img src="img/logo.png" alt="Bootstrap"  height="60px">
+    </a>
+  </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="noticias.php">Noticias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="acercade.php">Acerca de</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="contacto.php">Contactanos</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="login.php">Iniciar sesion</a>
+
+
+        
+    </div>
+  </div>
+</nav>
+
+
     <br>
 	<br>
 	<br>

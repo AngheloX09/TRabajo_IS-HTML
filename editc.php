@@ -34,7 +34,7 @@ Email	 	 : info@obedalvarado.pw
 <body>
 	<div class="container">
 		<div class="content">
-			<h2>Datos de la publicacion &raquo; Editar datos</h2>
+			<h2>Datos de carrusel &raquo; Editar datos</h2>
 			<hr />
 			
 			<?php
@@ -42,7 +42,8 @@ Email	 	 : info@obedalvarado.pw
 			$nik = mysqli_real_escape_string($con,(strip_tags($_GET["nik"],ENT_QUOTES)));
             //Buscar en el campo pass el dato que coindica con la variable $nik para editar el registro
 			$img='';
-            $miConsulta = "SELECT * FROM publicacion WHERE texto = '$nik'"; 
+			
+            $miConsulta = "SELECT * FROM carrusel WHERE texto = '$nik'"; 
 			$sql = mysqli_query($con, $miConsulta);
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: admin_contenido.php");
@@ -84,14 +85,14 @@ Email	 	 : info@obedalvarado.pw
 			
 
 				//mysqli_real_escape_string($con,(strip_tags($_POST["pass"],ENT_QUOTES)));//Escanpando caracteres 
-				$texto		     = $_POST['texto'];//mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));//Escanpando caracteres 
-				//$imagen	 = $_POST['imagen'];//mysqli_real_escape_string($con,(strip_tags($_POST["correo"],ENT_QUOTES)));//Escanpando caracteres 
+				$texto		     = $_POST['texto'];
+				$titulo	= $_POST['titulo']; 
 				
 				try {
 					if($img==''){
-						$con->query ("UPDATE publicacion SET texto='$texto' WHERE texto='$nik'");
+						$con->query ("UPDATE carrusel SET titulo='$titulo' ,texto='$texto' WHERE texto='$nik'");
 					}else{
-						$con->query ("UPDATE publicacion SET texto='$texto', imagen='$img' WHERE texto='$nik'"); /*Crear el UPDATE para el campo pass igual a variable nik*/
+						$con->query ("UPDATE carrusel SET titulo='$titulo' ,texto='$texto',imagen='$img' WHERE texto='$nik'"); /*Crear el UPDATE para el campo pass igual a variable nik*/
 					}
 
 					//$con->mysqli_query($con, $miConsulta) or die(mysqli_error());
@@ -117,6 +118,13 @@ Email	 	 : info@obedalvarado.pw
 			}
 			?>
 			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data" >
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Titulo</label>
+					<div class="col-sm-2">
+					<input type="text" name="titulo" value="<?php echo $row ['titulo']; ?>" width="500px" placeholder="Nuevo titulo">
+					</div>
+				</div>
+
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Texto</label>
 					<div class="col-sm-2">
