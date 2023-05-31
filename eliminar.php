@@ -2,7 +2,7 @@
     include("conexion.php");
 
     $texto=$_GET['texto'];
-    $eliminar= "DELETE FROM publicacion WHERE texto='$texto'";
+    $eliminar= "DELETE FROM publicacion WHERE id='$texto'";
 
     $reliminar = mysqli_query($con,$eliminar);
 

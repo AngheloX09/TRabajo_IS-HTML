@@ -17,6 +17,9 @@
     body {
       background-color: #d6c8e7; /* Cambia el color de fondo aquí */
     }
+    img {
+      border: 3px solid white; /* Borde de 2 píxeles de ancho y color rojo */
+    }
   </style>
   </head>
 
@@ -26,7 +29,7 @@
   <div class="container-fluid">
   <div class="container">
     <a class="navbar-brand" href="index.php">
-      <img src="img/logo.png" alt="Bootstrap"  height="60px">
+      <img src="img/logo3.png" alt="Bootstrap"  height="60px">
     </a>
   </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +61,7 @@
 			<table class="tablita2">
 				<?php 
 
-                    $miConsulta = "SELECT * FROM publicacion WHERE seccion = 1;"; //crear una consulta que muestre a todos los empleados de la tabla empleados ordenadas por el campo código
+          $miConsulta = "SELECT * FROM publicacion WHERE seccion = 1;"; //crear una consulta que muestre a todos los empleados de la tabla empleados ordenadas por el campo código
 					$sql = mysqli_query($con, $miConsulta);
 				if(mysqli_num_rows($sql) == 0){
 					echo '<tr><td colspan="8">No hay datos.</td></tr>';
@@ -68,7 +71,7 @@
 						echo '
 						<tr>
 							<td>'.$row['texto'].'</td>
-              <td><img src="'.$row['imagen'].'" width="300px"></td>
+              <td><img src="'.$row['imagen'].'" width="600px"></td>
 			  
 						</tr>
 						';

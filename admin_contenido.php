@@ -23,6 +23,9 @@
     body {
       background-color: #d6c8e7; /* Cambia el color de fondo aquí */
     }
+	img {
+      border: 3px solid white; /* Borde de 2 píxeles de ancho y color rojo */
+    }
   </style>
 </head>
 
@@ -32,7 +35,7 @@
   <div class="container-fluid">
   <div class="container">
     <a class="navbar-brand" href="index.php">
-      <img src="img/logo.png" alt="Bootstrap"  height="60px">
+      <img src="img/logo3.png" alt="Bootstrap"  height="60px">
     </a>
   </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,8 +100,8 @@
 
 			  			<td>
 
-								<a href="edit.php?nik='.$row['texto'].'" title="Editar datos" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true">Editar</span></a>
-								<a href="eliminar.php?texto='.$row['texto'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar la publicacion?\')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true">Eliminar</span></a>
+								<a href="edit.php?nik='.$row['id'].'" title="Editar datos" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true">Editar</span></a>
+								<a href="eliminar.php?texto='.$row['id'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar la publicacion?\')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true">Eliminar</span></a>
 							</td>
 						</tr>
 						';
@@ -121,23 +124,22 @@
 				</tr>
 				<?php 
 
-                    $miConsulta = "SELECT * FROM carrusel;"; //crear una consulta que muestre a todos los empleados de la tabla empleados ordenadas por el campo código
-					$sql = mysqli_query($con, $miConsulta);
-				if(mysqli_num_rows($sql) == 0){
+                    $miConsulta2 = "SELECT * FROM carrusel;"; //crear una consulta que muestre a todos los empleados de la tabla empleados ordenadas por el campo código
+					$sql2 = mysqli_query($con, $miConsulta2);
+				if(mysqli_num_rows($sql2) == 0){
 					echo '<tr><td colspan="8">No hay datos.</td></tr>';
 				}else{
 					$no = 1;
-					while($row = mysqli_fetch_assoc($sql)){
+					while($row2 = mysqli_fetch_assoc($sql2)){
 						echo '
 						<tr>
-							<td>'.$row['texto'].'</td>
-							<td><img src="'.$row['imagen'].'" width="300px"></td>
-							<td>'.$row['posicion'].'</td>
+							<td>'.$row2['texto'].'</td>
+							<td><img src="'.$row2['imagen'].'" width="300px"></td>
+							<td>'.$row2['posicion'].'</td>
 
 			  			<td>
 
-								<a href="editc.php?nik='.$row['texto'].'" title="Editar datos" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true">Editar</span></a>
-								<a href="eliminar.php?texto='.$row['texto'].'" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar la publicacion?\')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true">Eliminar</span></a>
+								<a href="editc.php?nik='.$row2['posicion'].'" title="Editar datos" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true">Editar</span></a>
 							</td>
 						</tr>
 						';

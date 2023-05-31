@@ -22,18 +22,19 @@
     <style>
     /* Estilo CSS para el cuerpo de la página */
     body {
-      background-color: #d6c8e7; /* Cambia el color de fondo aquí */
+      background-color: #e5daf3; /* Cambia el color de fondo aquí */
     }
   </style>
 
 </head>
 
 <body>
-<nav class="navbar" style="background-color: #e5daf3;">
+    <!--<a href="https://prod.liveshare.vsengsaas.visualstudio.com/join?7AC59D5DFDF549D7D6B7097CEE6EF4D0B654">Colaborar xD</a>-->
+<nav class="navbar" style="background-color: #d6c8e7;">
   <div class="container-fluid">
   <div class="container">
     <a class="navbar-brand" href="index.php">
-      <img src="img/logo.png" alt="Bootstrap"  height="60px">
+      <img src="img/logo3.png" alt="Bootstrap"  height="60px">
     </a>
   </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

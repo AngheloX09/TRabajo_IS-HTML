@@ -6,6 +6,9 @@
     }
     $img='';
 
+   
+  if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
     if(isset($_POST['enviar'])) { 
 
       if(isset($_FILES["imagen"])){
@@ -52,6 +55,7 @@
         } */
       } 
     }
+  }
 
 ?>
 
@@ -63,7 +67,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Su,Es,Ri.A.C</title>
     <!--<link  href="css/style.css" as="style">-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://localhost/Proyecto-IS/css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <style>
@@ -71,6 +75,30 @@
     body {
       background-color: #d6c8e7; /* Cambia el color de fondo aquí */
     }
+
+    #imagen_previsualizacion {
+          max-width: 300px;
+          max-height: 300px;
+          display: none;
+          border: 1px solid #ccc;
+          padding: 5px;
+          margin-top: 10px;
+          color: #ffffff;
+        }
+
+
+.input-grande {
+  font-size: 15px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  color: black; /* Establece el color del texto en negro */
+  resize: vertical; /* Permite redimensionar verticalmente el textarea */
+  width: 450px;
+  height: 150px;
+}
+
+
   </style>
 </head>
 
@@ -80,7 +108,7 @@
   <div class="container-fluid">
   <div class="container">
     <a class="navbar-brand" href="index.php">
-      <img src="img/logo.png" alt="Bootstrap"  height="60px">
+      <img src="img/logo3.png" alt="Bootstrap"  height="60px">
     </a>
   </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,26 +132,29 @@
   </div>
 </nav>
 <br>
-<br>
 
+<h2>Publicar Contenido</h2>
 
-								<form id="login-form" method="post" role="form" enctype="multipart/form-data">
+								<form id="login-form" method="post" role="form" enctype="multipart/form-data">   
                   <table class="tablita2">
                     <tr>
                      <td>
 									<div class="form-group">
-										<input type="text" name="texto" id="texto" tabindex="1" class="form-control" placeholder="Texto" value="">
+                  <textarea class="input-grande"  name="texto" id="texto" placeholder="Ingresa un texto para tu publicacion"></textarea>
+										<!--<input type="text" name="texto" id="texto" tabindex="1" class="input-grande" placeholder="Texto" value="">-->
 									</div>
                   </td> 
                   <td>
 									<div class="form-group">
-										<input type="file" name="imagen" id="imagen" tabindex="1" class="form-control" placeholder="Imagen" value="">
+                  <div class="area-soltar" ondragover="manejarDragOver(event)" ondragleave="manejarDragLeave(event)" ondrop="manejarDrop(event)"></div>
+										<input type="file" name="imagen" id="file-input" tabindex="1" ondragstart="manejarDragStart(event)" ondragend="manejarDragEnd(event)" onchange="mostrarPrevisualizacion(event)">
+                    <img id="imagen_previsualizacion" src="#" alt="Previsualización de la imagen" style="max-width: 300px; max-height: 300px; display: none;">
 									</div>
                   </td>
                   <td>
                   <div class="form-group">
                   <div class="col-sm-3">
-                    <select name="seccion" >
+                    <select class="seccion" name="seccion" >
                       <option value="1">Publicar en Noticias</option>
                       <option value="2">Añadir a Acerca de</option>
                     </select> 
@@ -149,6 +180,20 @@
 	</div>
 
 
+  <script>
+        function mostrarPrevisualizacion(event) {
+          const archivo = event.target.files[0];
+          const lector = new FileReader();
+          
+          lector.onload = function(e) {
+            const imagenPrevisualizacion = document.getElementById('imagen_previsualizacion');
+            imagenPrevisualizacion.src = e.target.result;
+            imagenPrevisualizacion.style.display = 'block';
+          };
+          
+          lector.readAsDataURL(archivo);
+        }
+      </script>
 
 <script src="loginjs.js"></script>
   

@@ -24,6 +24,25 @@ Email	 	 : info@obedalvarado.pw
 		.content {
 			margin-top: 80px;
 		}
+
+		#imagen_previsualizacion {
+          max-width: 300px;
+          max-height: 300px;
+          display: none;
+          border: 1px solid #ccc;
+          padding: 5px;
+          margin-top: 10px;
+        }
+		.input-grande {
+  font-size: 15px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  color: black; /* Establece el color del texto en negro */
+  resize: vertical; /* Permite redimensionar verticalmente el textarea */
+  width: 450px;
+  height: 150px;
+}
 	</style>
 	
 	<!--[if lt IE 9]>
@@ -42,7 +61,7 @@ Email	 	 : info@obedalvarado.pw
 			$nik = mysqli_real_escape_string($con,(strip_tags($_GET["nik"],ENT_QUOTES)));
             //Buscar en el campo pass el dato que coindica con la variable $nik para editar el registro
 			$img='';
-            $miConsulta = "SELECT * FROM publicacion WHERE texto = '$nik'"; 
+            $miConsulta = "SELECT * FROM publicacion WHERE id = '$nik'"; 
 			$sql = mysqli_query($con, $miConsulta);
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: admin_contenido.php");
@@ -89,9 +108,9 @@ Email	 	 : info@obedalvarado.pw
 				
 				try {
 					if($img==''){
-						$con->query ("UPDATE publicacion SET texto='$texto' WHERE texto='$nik'");
+						$con->query ("UPDATE publicacion SET texto='$texto' WHERE id='$nik'");
 					}else{
-						$con->query ("UPDATE publicacion SET texto='$texto', imagen='$img' WHERE texto='$nik'"); /*Crear el UPDATE para el campo pass igual a variable nik*/
+						$con->query ("UPDATE publicacion SET texto='$texto', imagen='$img' WHERE id='$nik'"); /*Crear el UPDATE para el campo pass igual a variable nik*/
 					}
 
 					//$con->mysqli_query($con, $miConsulta) or die(mysqli_error());
@@ -120,14 +139,19 @@ Email	 	 : info@obedalvarado.pw
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Texto</label>
 					<div class="col-sm-2">
-						<input type="text" name="texto" value="<?php echo $row ['texto']; ?>" width="500px" placeholder="Nuevo texto">
+						<textarea name="texto" id="texto" class="input-grande"  placeholder="Nuevo texto"><?php echo $row ['texto']; ?></textarea>
+						<!--<input type="text" name="texto" value="<?php// echo $row ['texto']; ?>" width="500px" placeholder="Nuevo texto">-->
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">imagen Actual</label>
 					<div class="col-sm-4">
 					<img src="<?php echo $row ['imagen']; ?>" width="300px"></td>
-					<input type="file" name="imagen" id="imagen" tabindex="1" class="form-control" >
+
+					<div class="area-soltar" ondragover="manejarDragOver(event)" ondragleave="manejarDragLeave(event)" ondrop="manejarDrop(event)"></div>
+					<input type="file" name="imagen" id="file-input" tabindex="1" ondragstart="manejarDragStart(event)" ondragend="manejarDragEnd(event)" onchange="mostrarPrevisualizacion(event)">
+                    <img id="imagen_previsualizacion" src="#" alt="Previsualización de la imagen" style="max-width: 300px; max-height: 300px; display: none;">
+
 					</div>
 				</div>
 			
@@ -141,7 +165,21 @@ Email	 	 : info@obedalvarado.pw
 			</form>
 		</div>
 	</div>
-
+	
+	<script>
+        function mostrarPrevisualizacion(event) {
+          const archivo = event.target.files[0];
+          const lector = new FileReader();
+          
+          lector.onload = function(e) {
+            const imagenPrevisualizacion = document.getElementById('imagen_previsualizacion');
+            imagenPrevisualizacion.src = e.target.result;
+            imagenPrevisualizacion.style.display = 'block';
+          };
+          
+          lector.readAsDataURL(archivo);
+        }
+      </script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>

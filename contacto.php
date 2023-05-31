@@ -85,7 +85,7 @@
   <div class="container-fluid">
   <div class="container">
     <a class="navbar-brand" href="index.php">
-      <img src="img/logo.png" alt="Bootstrap"  height="60px">
+      <img src="img/logo3.png" alt="Bootstrap"  height="60px">
     </a>
   </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,8 +116,8 @@
   <div class="card">
     <h2>Sueños, Esperanzas Y Risas. A.C</h2>
     <p>Asociación civil sin fines de lucro</p>
-    <p class="contact-info">Contacto: <a href="#">correo@ejemplo.com</a></p>
-    <p class="contact-info">Teléfono: <a href="#">+5246545</a></p>
+    <p class="contact-info">Contacto: <a href="#">ser.a.c@outlook.com</a></p>
+    <p class="contact-info">Teléfono: <a href="#">+999999999</a></p>
     <p class="contact-info">Facebook: <a
         href="https://www.facebook.com/people/Sue%C3%B1os-Esperanzas-Y-Risas-AC/100070818625819/"
         target="_blank">Sueños, Esperanzas Y Risas. A.C

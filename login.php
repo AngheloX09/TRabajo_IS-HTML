@@ -84,8 +84,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   
-  <link rel="preload" href="css/style.css" as="style">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="http://localhost/Proyecto-IS/css/style.css" as="style">
+  <link rel="stylesheet" href="http://localhost/Proyecto-IS/css/style.css">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -107,7 +107,7 @@
   <div class="container-fluid">
   <div class="container">
     <a class="navbar-brand" href="index.php">
-      <img src="img/logo.png" alt="Bootstrap"  height="60px">
+      <img src="img/logo3.png" alt="Bootstrap"  height="60px">
     </a>
   </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -172,59 +172,20 @@
 										<input type="text" name="user" id="user" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
 									<div class="form-group">
-										<input type="text" name="pass" id="pass" tabindex="2" class="form-control" placeholder="Password">
+										<input type="password" name="pass" id="pass" tabindex="2" class="form-control" placeholder="Password">
 									</div>
 									<div class="form-group">
 										<!-- <input type="text" name="tipo" id="tipo" tabindex="3" class="form-control" placeholder="Tipo(1,2,3)"> -->
 									</div>
-									<div class="form-group text-center">
-										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-										<label for="remember"> Remember Me</label>
-									</div>
+				
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Enviar">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="botinput" value="Iniciar sesion">
 											</div>
 										</div>
 									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-lg-12">
-												<div class="text-center">
-													<a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
-								<form id="register-form" method="post" role="form" style="display: none;">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombres" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="correo" id="correo" tabindex="1" class="form-control" placeholder="Correo" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="rfc" id="rfc" tabindex="1" class="form-control" placeholder="RFC" value="">
-									</div>
-									<div class="form-group">
-										<input type="text" name="estado" id="estado" tabindex="1" class="form-control" placeholder="Estado (Numero del 1 al 3)" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
-									</div>
-									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar Contraseña">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="enviar" value="Registrar">
-											</div>
-										</div>
-									</div>
-								</form>
+									
 							</div>
 						</div>
 					</div>
